@@ -19,14 +19,20 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import store from "../store";
 import axiosClient from "../axiosClient";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const ingredients = ref([]);
 
 onMounted(async () => {
-  const response = await axiosClient.get("list.php?i=list");
-  console.log(response.data);
+  try {
+    const response = await axiosClient.get("list.php?i=list");
+    ingredients.value = response.data;
+    console.log(response.data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 });
 </script>
