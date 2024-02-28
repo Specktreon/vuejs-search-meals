@@ -29,12 +29,7 @@
           was raining in the summer
         </p>
         <div class="flex items-center justify-between">
-          <a
-            :href="meal.strYoutube"
-            target="_blank"
-            class="px-3 py-2 rounded border-2 text-white border-red-600 bg-red-500 hover:bg-red-600 transition-colors"
-            >Youtube</a
-          >
+          <youtube-button :href="meal.strYoutube"> Youtube </youtube-button>
         </div>
       </div>
     </div>
@@ -45,6 +40,7 @@
 import { ref, computed, onMounted } from "vue";
 import store from "../store";
 import { useRoute } from "vue-router";
+import YoutubeButton from "../components/YoutubeButton.vue";
 
 const route = useRoute();
 const keyword = ref("");

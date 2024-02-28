@@ -32,16 +32,16 @@ const routes = [
         name: "byIngredient",
         component: MealsByIngredient,
       },
+      {
+        path: "/meal/:id",
+        name: "mealDetails",
+        component: MealDetails,
+      },
     ],
   },
   {
     path: "/guest",
     component: GuestLayout,
-  },
-  {
-    path: "/meal/:id?",
-    name: "mealDetails",
-    component: MealDetails,
   },
 ];
 
