@@ -1,7 +1,39 @@
-# Meals Search app with vuejs
+# Dishly – Meal Search App (Vue 3)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A responsive web app to find recipes, using the free [TheMealDB API](https://www.themealdb.com/api.php).
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Search by name** with live results.
+- **Browse by first letter** (A–Z).
+- **Browse by ingredient**: list of ingredients, then the meals that use one.
+- **Meal details**: picture, ingredients with measures, instructions, and links to the YouTube video and original source.
+- Responsive layout with Tailwind CSS.
+
+## Tech stack
+
+Vue 3 · Vite · Vue Router · Vuex · Axios · Tailwind CSS
+
+## Routes
+
+| Path | Page |
+|---|---|
+| `/` | home |
+| `/by-name/:name?` | search by name |
+| `/by-letter/:letter?` | browse by letter |
+| `/ingredients` | all ingredients |
+| `/by-ingredient/:ingredient` | meals with one ingredient |
+| `/meal/:id` | meal details |
+
+## Run it locally
+
+```bash
+npm install
+npm run dev
+```
+
+The API base URL is set in `.env` as `VITE_API_BASE_URL` (TheMealDB public endpoint, no key needed).
+
+## Author
+
+Ridha Lezzar · [LinkedIn](https://linkedin.com/in/ridha-lezzar-8322222b5)
